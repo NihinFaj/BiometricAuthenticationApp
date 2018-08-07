@@ -8,12 +8,12 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card>
+  <ion-card style="padding-top: 5%; padding-bottom: 5%">
       <ion-card-header>
-          <h1 style="text-align: center">Welcome {{ data.name }}</h1>
+          <h1 style="text-align: center"><b>Welcome {{ data.name }}</b></h1>
       </ion-card-header>
       <ion-card-content>
-        You have arrived at the future of banking. You can carry out transactions such as Robot Banking, Speeh to Text Transactions and a whole lot of ther things.
+        Welcome {{ data.name }}. With the fingerperint authentication, there are endless possibilities with what you can achieve.
       </ion-card-content>
     </ion-card>
 
@@ -27,32 +27,22 @@
         <ion-list>
           <button ion-item (click)="gotToPage(1)">
             <ion-icon name="md-globe" item-start></ion-icon>
-            World Transfers
+            Lifestyle
           </button>
       
           <button ion-item (click)="gotToPage(2)">
             <ion-icon name="ios-card" item-start></ion-icon>
-            Card Transactions
+            Card
           </button>
       
-          <button ion-item (click)="openCamera()">
+          <button ion-item (click)="gotToPage()">
             <ion-icon name="ios-videocam" item-start></ion-icon>
-            Video Banking
+            Video
           </button>
       
           <button ion-item (click)="gotToPage(4)">
             <ion-icon name="ios-cash" item-start></ion-icon>
-            Bills Top-Up
-          </button>
-      
-          <button ion-item (click)="gotToPage(5)">
-            <ion-icon name="md-mail" item-start></ion-icon>
-            Statement By Mail
-          </button>
-      
-          <button ion-item (click)="gotToPage(6)">
-            <ion-icon name="md-help" item-start></ion-icon>
-            Enquiries
+            Bills
           </button>
       
         </ion-list>
