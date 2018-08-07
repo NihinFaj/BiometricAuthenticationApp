@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SettersandgettersProvider {
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello SettersandgettersProvider Provider');
   }
 

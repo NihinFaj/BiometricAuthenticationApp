@@ -10,7 +10,7 @@ and Angular DI. */
 @Injectable()
 export class UtilityProvider {
 
-  constructor(public http: HttpClient, public alertCtrl: AlertController) {
+  constructor(public alertCtrl: AlertController) {
   }
 
   //Show popup alert
