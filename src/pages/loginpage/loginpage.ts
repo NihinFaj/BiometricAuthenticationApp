@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Injectable } from '@angular/core';
+import { UtilityProvider } from '../../providers/utility/utility'
 import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
 /**
@@ -17,7 +18,8 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 })
 export class LoginpagePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public utility: UtilityProvider,
+    public faio: FingerprintAIO) {
   }
 
   data = {
@@ -31,10 +33,52 @@ export class LoginpagePage {
   goToDashboard(){
     if (!this.data.userName || !this.data.passWord)
     {
-      alert("Invalid Username or Password");
-      console.log("Invalid Username or Password");
+      this.utility.presentAlert("Please enter Username and Password");
       return;            
     }
+    else {
+      console.log("I am inside Login With Fingerprint");
+    //Check if Fingerprint is available
+    this.faio.isAvailable()
+    .then(result => {
+      console.log(result);
+      if(result === "finger"){
+        //Fingerprint Exist
+        console.log("Fingerprint Exist!")
+        this.faio.show({
+          clientId: 'GTWorld-Fingerprint',
+          clientSecret: 'gtworldv2', //Only necessary for Android
+          disableBackup: true, //Only for Android(optional)
+          localizedFallbackTitle: 'Use Pin', //Only for iOS
+          localizedReason: 'Please Authenticate' //Only for iOS
+        })
+        .then((result: any) => {
+          //Fingerprint was successfully verified
+          console.log(result);
+          if(result == "Success"){
+          //Call Biometric Login
+          // this.bioLogin();
+          }
+          else {
+            this.utility.presentAlert(result);
+            console.log(result);
+          }
+        })
+        .catch((error: any) => {
+          //Fingerprint was not successfully verified          
+          this.utility.presentAlert(error);
+          console.log(error);
+        });
+      }
+      else {
+        //Fingerprint Does Not Exist        
+        this.utility.presentAlert("Fingerprint does not exist on this device!");
+        console.log("Fingerprint does not exist on this device!")
+      }
+    })
+    }
+
+
 
 
   }
