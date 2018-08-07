@@ -31,59 +31,59 @@ export class LoginpagePage {
   ionViewDidLoad() {
   }
 
-  // goToDashboard(){
-  //   if (!this.data.userName || !this.data.passWord)
-  //   {
-  //     this.utility.presentAlert("Please enter Username and Password");
-  //     return;            
-  //   }
-  //   else {
-  //     console.log("I am inside Login With Fingerprint");
-  //   //Check if Fingerprint is available
-  //   this.faio.isAvailable()
-  //   .then(result => {
-  //     console.log(result);
-  //     if(result === "finger"){
-  //       //Fingerprint Exist
-  //       console.log("Fingerprint Exist!")
-  //       this.faio.show({
-  //         clientId: 'GTWorld-Fingerprint',
-  //         clientSecret: 'gtworldv2', //Only necessary for Android
-  //         disableBackup: true, //Only for Android(optional)
-  //         localizedFallbackTitle: 'Use Pin', //Only for iOS
-  //         localizedReason: 'Please Authenticate' //Only for iOS
-  //       })
-  //       .then((result: any) => {
-  //         //Fingerprint was successfully verified
-  //         console.log(result);
-  //         if(result == "Success"){
-  //         //Go to dashboard
-  //         this.setAndGet.UserName = this.data.userName;
-  //         this.navCtrl.push("")
-  //         }
-  //         else {
-  //           this.utility.presentAlert(result);
-  //           console.log(result);
-  //         }
-  //       })
-  //       .catch((error: any) => {
-  //         //Fingerprint was not successfully verified          
-  //         this.utility.presentAlert(error);
-  //         console.log(error);
-  //       });
-  //     }
-  //     else {
-  //       //Fingerprint Does Not Exist        
-  //       this.utility.presentAlert("Fingerprint does not exist on this device!");
-  //       console.log("Fingerprint does not exist on this device!")
-  //     }
-  //   })
-  //   }
-  // }
-
   goToDashboard(){
+    if (!this.data.userName || !this.data.passWord)
+    {
+      this.utility.presentAlert("Please enter Username and Password");
+      return;            
+    }
+    else {
+      console.log("I am inside Login With Fingerprint");
+    //Check if Fingerprint is available
+    this.faio.isAvailable()
+    .then(result => {
+      console.log(result);
+      if(result === "finger"){
+        //Fingerprint Exist
+        console.log("Fingerprint Exist!")
+        this.faio.show({
+          clientId: 'GTWorld-Fingerprint',
+          clientSecret: 'gtworldv2', //Only necessary for Android
+          disableBackup: true, //Only for Android(optional)
+          localizedFallbackTitle: 'Use Pin', //Only for iOS
+          localizedReason: 'Please Authenticate' //Only for iOS
+        })
+        .then((result: any) => {
+          //Fingerprint was successfully verified
+          console.log(result);
+          if(result == "Success"){
+          //Go to dashboard
           this.setAndGet.UserName = this.data.userName;
-          this.navCtrl.setRoot("DashboardPage");
+          this.navCtrl.push("DashboardPage")
+          }
+          else {
+            this.utility.presentAlert(result);
+            console.log(result);
+          }
+        })
+        .catch((error: any) => {
+          //Fingerprint was not successfully verified          
+          this.utility.presentAlert(error);
+          console.log(error);
+        });
+      }
+      else {
+        //Fingerprint Does Not Exist        
+        this.utility.presentAlert("Fingerprint does not exist on this device!");
+        console.log("Fingerprint does not exist on this device!")
+      }
+    })
+    }
   }
+
+  // goToDashboard(){
+  //         this.setAndGet.UserName = this.data.userName;
+  //         this.navCtrl.setRoot("DashboardPage");
+  // }
 
 }
