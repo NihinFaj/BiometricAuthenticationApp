@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Injectable } from '@angular/core';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 
 /**
  * Generated class for the LoginpagePage page.
@@ -23,8 +24,19 @@ export class LoginpagePage {
     userName: "",
     passWord: ""
   }
-  
+
   ionViewDidLoad() {
+  }
+
+  goToDashboard(){
+    if (!this.data.userName || !this.data.passWord)
+    {
+      alert("Invalid Username or Password");
+      console.log("Invalid Username or Password");
+      return;            
+    }
+
+
   }
 
 }

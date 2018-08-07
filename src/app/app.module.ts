@@ -10,6 +10,8 @@ import { LoginpagePage } from '../pages/loginpage/loginpage';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SettersandgettersProvider } from '../providers/settersandgetters/settersandgetters';
+import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
+import { UtilityProvider } from '../providers/utility/utility';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { SettersandgettersProvider } from '../providers/settersandgetters/setter
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SettersandgettersProvider
+    SettersandgettersProvider,
+    FingerprintAIO,
+    UtilityProvider
   ]
 })
 export class AppModule {}

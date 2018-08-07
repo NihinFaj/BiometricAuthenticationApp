@@ -3,16 +3,65 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Fingerprint Auth Demo App</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <ion-card>
+      <ion-card-header>
+          <h1 style="text-align: center">Welcome {{ data.name }}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        You have arrived at the future of banking. You can carry out transactions such as Robot Banking, Speeh to Text Transactions and a whole lot of ther things.
+      </ion-card-content>
+    </ion-card>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <br>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-card>
+        <ion-card-header>
+         Features
+        </ion-card-header>
+      
+        <ion-list>
+          <button ion-item (click)="gotToPage(1)">
+            <ion-icon name="md-globe" item-start></ion-icon>
+            World Transfers
+          </button>
+      
+          <button ion-item (click)="gotToPage(2)">
+            <ion-icon name="ios-card" item-start></ion-icon>
+            Card Transactions
+          </button>
+      
+          <button ion-item (click)="openCamera()">
+            <ion-icon name="ios-videocam" item-start></ion-icon>
+            Video Banking
+          </button>
+      
+          <button ion-item (click)="gotToPage(4)">
+            <ion-icon name="ios-cash" item-start></ion-icon>
+            Bills Top-Up
+          </button>
+      
+          <button ion-item (click)="gotToPage(5)">
+            <ion-icon name="md-mail" item-start></ion-icon>
+            Statement By Mail
+          </button>
+      
+          <button ion-item (click)="gotToPage(6)">
+            <ion-icon name="md-help" item-start></ion-icon>
+            Enquiries
+          </button>
+      
+        </ion-list>
+      </ion-card>
 </ion-content>
+<ion-footer>
+    <ion-toolbar>
+      <ion-title>Demo 2018.</ion-title>
+    </ion-toolbar>
+  </ion-footer>
+
+
