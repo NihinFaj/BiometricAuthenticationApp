@@ -74,7 +74,7 @@ export class LoginpagePage {
         });
       }
       else {
-        //Fingerprint Does Not Exist        
+        //Fingerprint/Face Auth Does Not Exist        
         this.utility.presentAlert("Fingerprint/Face Auth does not exist on this device!");
         console.log("Fingerprint/Face Auth does not exist on this device!")
       }

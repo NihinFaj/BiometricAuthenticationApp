@@ -1,1 +1,1 @@
-# FingerprintAuthenticationApp
+# BiometricAuthenticationApp
