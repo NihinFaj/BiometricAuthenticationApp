@@ -37,13 +37,12 @@ export class LoginpagePage {
       return;            
     }
     else {
-      console.log("I am inside Login With Biometric");
     //Check if Fingerprint or Face  is available
     this.faio.isAvailable()
     .then(result => {
       console.log(result);
       if(result === "finger" || result === "face"){
-        //Fingerprint or Face Auth Exist
+        //Fingerprint or Face Auth is available
         console.log("Fingerprint or Face Exist!")
         this.faio.show({
           clientId: 'NihinDemoBioAuthApp',
@@ -58,7 +57,7 @@ export class LoginpagePage {
           //Fingerprint/Face was successfully verified            
           //Go to dashboard
           this.setAndGet.UserName = this.data.userName;
-          this.navCtrl.push("DashboardPage")
+          this.navCtrl.setRoot("DashboardPage")
           }
           else {
           //Fingerprint/Face was not successfully verified                      
@@ -73,15 +72,15 @@ export class LoginpagePage {
         });
       }
       else {
-        //Fingerprint/Face Auth Does Not Exist        
-        this.utility.presentAlert("Fingerprint/Face Auth does not exist on this device!");
-        console.log("Fingerprint/Face Auth does not exist on this device!")
+        //Fingerprint or Face Auth is not available        
+        this.utility.presentAlert("Fingerprint/Face Auth is not available on this device!");
+        console.log("Fingerprint/Face Auth is not available on this device!")
       }
     })
     }
   }
 
-  // goToDashboard(){
+  // login(){
   //         this.setAndGet.UserName = this.data.userName;
   //         this.navCtrl.setRoot("DashboardPage");
   // }
