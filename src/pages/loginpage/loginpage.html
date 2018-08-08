@@ -1,4 +1,4 @@
-<!--
+git <!--
   Generated template for the LoginPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
@@ -21,11 +21,8 @@
     <div class="container">
       <label><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" [(ngModel)]="data.userName" required>
-  
-      <label><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" [(ngModel)]="data.passWord" required>
-  
-      <button type="submit" (click)="goToDashboard()">Login</button>
+    
+      <button type="submit" (click)="login()">Login</button>
       <label>
         <input type="checkbox" checked="checked"> Remember me
       </label>

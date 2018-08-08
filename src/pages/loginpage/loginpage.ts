@@ -24,17 +24,16 @@ export class LoginpagePage {
   }
 
   data = {
-    userName: "",
-    passWord: ""
+    userName: ""
   }
 
   ionViewDidLoad() {
   }
 
-  goToDashboard(){
-    if (!this.data.userName || !this.data.passWord)
+  login(){
+    if (!this.data.userName)
     {
-      this.utility.presentAlert("Please enter Username and Password");
+      this.utility.presentAlert("Please enter Username!");
       return;            
     }
     else {
