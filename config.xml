@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>FingerprintDemoApp</name>
-    <description>An demo fingerprint authentication Ionic App.</description>
+    <name>BiometricDemoApp</name>
+    <description>An demo fingerprint/face authentication Ionic App.</description>
     <author email="nihinfaj@gmail.com" href="http://nihinlolafaj.com/">Nihinlola Fajemilehin</author>
     <content src="index.html" />
     <access origin="*" />
