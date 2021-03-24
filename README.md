@@ -2,11 +2,11 @@
 
 A demo Ionic 3 App with Fingerprint and Face Authentication on Android and iOS. Using plugin Cordova Fingerprint AIO.
 
-# Getting Started
+## Getting Started
 
 Clone the project with the command git clone https://github.com/NihinFaj/BiometricAuthenticationApp
 
-# Prerequisites
+## Prerequisites
 1. You need to have Node.js installed on your computer
 2. A web browser (E.g Google Chrome)
 3. An IDE (E.g Visual Studio Code)
@@ -14,8 +14,8 @@ Clone the project with the command git clone https://github.com/NihinFaj/Biometr
   i. Android Studio (For Android)
   ii. XCode (For iOS)
   
- # Author
+ ## Author
  Nihinlolamiwa Fajemilehin
  
- # Functionality
+ ## Functionality
  This App is an Ionic 3 App that lets you login to the App using either fingerprint or face authneticaton, based on what your device supports. 
