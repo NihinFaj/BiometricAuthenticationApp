@@ -4,15 +4,18 @@ A demo Ionic 3 App with Fingerprint and Face Authentication on Android and iOS. 
 
 ## Getting Started
 
-Clone the project with the command git clone https://github.com/NihinFaj/BiometricAuthenticationApp
+Clone the project with the command 
+```
+git clone https://github.com/NihinFaj/BiometricAuthenticationApp
+```
 
 ## Prerequisites
 1. You need to have Node.js installed on your computer
 2. A web browser (E.g Google Chrome)
 3. An IDE (E.g Visual Studio Code)
 4. To generate the Android SDk and iOS IPA you need these 2 softwares installed
-  i. Android Studio (For Android)
-  ii. XCode (For iOS)
+   - Android Studio (For Android)
+   - XCode (For iOS)
   
  ## Author
  Nihinlolamiwa Fajemilehin
